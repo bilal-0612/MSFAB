@@ -1,7 +1,6 @@
 import sys
 from tqdm import tqdm
 import numpy
-#bian bian 
 
 def cmp_result(label, rec):
     dist_mat = numpy.zeros((len(label) + 1, len(rec) + 1), dtype='int32')

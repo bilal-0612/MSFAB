@@ -11,13 +11,28 @@ This repository contains the official implementation of the paper "Handwritten M
    ```
 
 2. **Prepare Data**:
-   Ensure the dataset is placed in the `data/` directory and preprocessed appropriately as described in the `README.md` of the `data/` folder.
+   Download the training and testing data from here https://drive.google.com/drive/folders/1vXQnSSKvQGPCXIp99aD0sSFLnsEWXOzn?usp=sharing
+   Ensure the dataset is placed in the `data/` directory 
 
 3. **Run Training**:
-   Use the command below to start training:
-   ```bash
-   python train.py --config configs/train_config.yaml
-   ```
+   Note that we train our model on one train set CROHME 2014 and test the model on three test sets CROHME 2014, CROHME 2016, and CROHME2019. Commands for training and testing the model with single decoder branch or two decoder branches respectively are as follows:
+
+```bash
+# for training on CROHME 2014  with one L2R branch (baseline model)
+sh train.sh -L2R
+
+# for training on CROHME 2014  with two branches (L2R and R2L) (our model, ABM)
+sh train.sh -L2R-R2L
+
+
+# for testing on CROHME 2014, 2016, 2019 with L2R branch
+sh test.sh -2014  L2R
+
+
+# for testing on CROHME 2014, 2016, 2019 with R2L branch
+sh test.sh -2014  R2L
+
+```
 
    - Replace `configs/train_config.yaml` with the path to your configuration file if it is located elsewhere.
    - Key hyperparameters such as learning rate, batch size, and model architecture can be adjusted in the configuration file.

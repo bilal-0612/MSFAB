@@ -44,7 +44,3 @@ sh test.sh -2014  R2L
    ```bash
    test.sh 2014 L2R
    ```
-3. **Results**:
-   - The results, including recognition accuracy and detailed metrics, will be saved in the `results/` directory.
-   - For visual evaluation, recognized mathematical expressions and ground truths will be logged in the `results/logs/` folder.
-
